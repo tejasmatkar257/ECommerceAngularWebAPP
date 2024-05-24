@@ -1,0 +1,56 @@
+<div class="container">
+    <h1 class="addProductHeading">Add Product</h1>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <label class="form-label">Product Name</label>
+        <input type="text" class="form-control" placeholder="Product Name" formControlName="name">
+        <div *ngIf="productForm.get('name')?.invalid && (productForm.get('name')?.dirty || productForm.get('name')?.touched)"
+            class="text-danger">
+            <div *ngIf="productForm.get('name')?.errors?.['required']">Product Name is required</div>
+        </div>
+        
+        <label class="form-label">Product Price</label>
+        <input type="number" class="form-control" placeholder="Product Price" formControlName="price">
+        <div *ngIf="productForm.get('price')?.invalid && (productForm.get('price')?.dirty || productForm.get('price')?.touched)"
+            class="text-danger">
+            <div *ngIf="productForm.get('price')?.errors?.['required']">Product Image Link is required</div>
+        </div>
+
+        <label class="form-label">Product Image Link</label>
+        <input type="text" class="form-control" placeholder="Product Image Link" formControlName="imageLink">
+        <div *ngIf="productForm.get('imageLink')?.invalid && (productForm.get('imageLink')?.dirty || productForm.get('imageLink')?.touched)"
+            class="text-danger">
+            <div *ngIf="productForm.get('imageLink')?.errors?.['required']">Product Image Link is required</div>
+        </div>
+
+        <label class="form-label">Product Category</label>
+        <div class="dropdown">
+            <select class="form-select" formControlName="category">
+                <option value="" disabled selected>Select Category</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothing and Fashion">Clothing and Fashion</option>
+                <option value="Home and Kitchen Appliances">Home and Kitchen Appliances</option>
+                <option value="Beauty and Personal Care">Beauty and Personal Care</option>
+                <option value="Books and Media">Books and Media</option>
+                <option value="Sports and Outdoors">Sports and Outdoors</option>
+                <option value="Toys and Games">Toys and Games</option>
+                <option value="Health and Wellness">Health and Wellness</option>
+                <option value="Groceries and Household Supplies">Groceries and Household Supplies</option>
+                <option value="Office and Stationery">Office and Stationery</option>
+            </select>
+        </div>
+
+        <label class="form-label">Product Description</label>
+        <textarea class="form-control" rows="3" placeholder="Product Description" formControlName="description"></textarea>
+        <div *ngIf="productForm.get('description')?.invalid && (productForm.get('description')?.dirty || productForm.get('price')?.touched)"
+            class="text-danger">
+            <div *ngIf="productForm.get('description')?.errors?.['required']">Product description is required</div>
+        </div>
+
+        <label class="form-label">Product Image:</label>
+        <div>
+            <img [src]="productForm.get('imageLink')?.value" *ngIf="productForm.get('imageLink')?.value">
+        </div>
+        
+        <button class="btn btn-primary" type="submit" [disabled]="productForm.invalid">Add Product</button>
+    </form>
+</div>

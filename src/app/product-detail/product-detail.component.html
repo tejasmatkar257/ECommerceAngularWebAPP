@@ -1,0 +1,14 @@
+<div class="container" *ngIf="product">
+    <div class="row">
+        <div class="col-md-6 card">
+            <img [src]="product.imageLink" class="img-fluid" alt="{{ product.name }}">
+        </div>
+        <div class="col-md-6">
+            <h2>{{ product.name }}</h2>
+            <p>Price: <b>₹{{ product.price }}</b></p>
+            <p>Category: {{product.category}}</p>
+            <p><b>Description:</b> {{ product.description }}</p>
+            <button class="btn btn-primary" (click)="buyNow(product.id)">Buy Now</button>
+        </div>
+    </div>
+</div>

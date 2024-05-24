@@ -1,0 +1,14 @@
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group .form-control {
+  max-width: 70px;
+  text-align: center;
+}
+
+.input-group .btn {
+  width: 40px;
+}

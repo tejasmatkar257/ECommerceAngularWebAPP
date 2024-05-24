@@ -1,0 +1,13 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+button{
+    background-color: tomato;
+    border-radius: 5px;
+}
+.error-message{
+    color: red;
+}

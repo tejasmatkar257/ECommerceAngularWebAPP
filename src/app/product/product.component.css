@@ -1,0 +1,15 @@
+form{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.addProductHeading{
+    color: tomato;
+}
+button{
+    margin-top: 10px;
+    background-color: tomato;
+}
+img{
+    width: 16rem;
+}
